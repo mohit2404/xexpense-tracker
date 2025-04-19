@@ -142,11 +142,11 @@ export default function TransactionModel({
             </label>
             <input
               id="amount"
-              name={type === "income" ? "amount" : "price"}
+              name={formData.type === "income" ? "amount" : "price"}
               type="number"
               value={formData.amount}
               onChange={handleChange}
-              placeholder={type === "income" ? "Income Amount" : "price"}
+              placeholder={formData.type === "income" ? "Income Amount" : "price"}
               min="0"
               step="0.01"
               className={inputClass}
