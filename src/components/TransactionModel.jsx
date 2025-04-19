@@ -68,7 +68,8 @@ export default function TransactionModel({
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const newName = name === "price" ? "amount" : name === "amount" ? "amount" : name;
+    setFormData((prev) => ({ ...prev, [newName]: value }));
   };
 
   const handleSubmit = (e) => {
@@ -141,11 +142,11 @@ export default function TransactionModel({
             </label>
             <input
               id="amount"
-              name="amount"
+              name={type === "income" ? "amount" : "price"}
               type="number"
               value={formData.amount}
               onChange={handleChange}
-              placeholder="0.00"
+              placeholder={type === "income" ? "Income Amount" : "price"}
               min="0"
               step="0.01"
               className={inputClass}
