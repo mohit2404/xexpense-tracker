@@ -21,11 +21,11 @@ export default function Summary({ title, amount, type, onAddClick }) {
       <p className="mt-2 text-2xl font-semibold text-black">&#8377; {amount}</p>
       <button
         className={`${
-          title === "Income" ? "bg-green-300" : "bg-red-300"
+          type === "Income" ? "bg-green-300" : "bg-red-300"
         } text-black mt-3 p-1.5 font-semibold px-4 rounded tracking-wide cursor-pointer active:scale-95`}
         onClick={onAddClick}
       >
-        Add {type}
+        + Add {type}
       </button>
     </div>
   );

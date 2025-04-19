@@ -20,7 +20,7 @@ export default function ExpenseList({
             >
               <div className="flex-1 min-w-0">
                 <p className="font-medium text-gray-800 truncate">
-                  {expense.description}
+                  {expense.titlec}
                 </p>
                 <div className="flex items-center text-sm text-gray-500">
                   <span className="truncate">{expense.category}</span>

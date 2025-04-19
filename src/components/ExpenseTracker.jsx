@@ -127,15 +127,15 @@ export default function ExpenseTracker() {
     <div className="">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
         <Summary
-          title="Income"
+          title="Wallet Balance:"
           amount={totalIncome}
-          type="income"
+          type="Income"
           onAddClick={() => openAddModal("income")}
         />
         <Summary
-          title="Expenses"
+          title="Expenses:"
           amount={totalExpenses}
-          type="expense"
+          type="Expense"
           onAddClick={() => openAddModal("expense")}
         />
 
@@ -143,20 +143,24 @@ export default function ExpenseTracker() {
           <h3 className="text-sm font-medium text-gray-600">Overview</h3>
           <div className="relative text-black p-2 rounded-lg overflow-hidden border border-gray-300">
             <div
-              className="h-full absolute bg-rose-200 inset-0"
+              className="h-full absolute bg-green-200 inset-0"
               style={{ width: `${incomePercentage}%` }}
             />
             <div className="relative">
-              <p className="text-sm text-gray-700 font-semibold tracking-wide">Income</p>
+              <p className="text-sm text-gray-700 font-semibold tracking-wide">
+                Income
+              </p>
             </div>
           </div>
           <div className="relative text-black p-2 rounded-lg overflow-hidden border border-gray-300">
             <div
-              className="h-full absolute bg-green-200 inset-0"
+              className="h-full absolute bg-rose-200 inset-0"
               style={{ width: `${expensesPercentage}%` }}
             />
             <div className="relative">
-              <p className="text-sm text-gray-700 font-semibold tracking-wide">Expenses</p>
+              <p className="text-sm text-gray-700 font-semibold tracking-wide">
+                Expenses
+              </p>
             </div>
           </div>
         </div>

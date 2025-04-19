@@ -37,7 +37,7 @@ export default function TransactionModel({
   transaction,
 }) {
   const [formData, setFormData] = useState({
-    description: "",
+    title: "",
     amount: "",
     category: "",
     date: new Date().toISOString().split("T")[0],
@@ -49,7 +49,7 @@ export default function TransactionModel({
     console.log(transaction);
     if (transaction) {
       setFormData({
-        description: transaction.description,
+        title: transaction.title,
         amount: transaction.amount,
         category: transaction.category,
         date: transaction.date,
@@ -57,7 +57,7 @@ export default function TransactionModel({
       });
     } else {
       setFormData({
-        description: "",
+        title: "",
         amount: "",
         category: "",
         date: new Date().toISOString().split("T")[0],
@@ -74,12 +74,12 @@ export default function TransactionModel({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!formData.description || !formData.amount || !formData.category) {
+    if (!formData.title || !formData.amount || !formData.category) {
       return;
     }
 
     onSubmit({
-      description: formData.description,
+      title: formData.title,
       amount: Number.parseFloat(formData.amount),
       category: formData.category,
       date: formData.date,
@@ -117,15 +117,15 @@ export default function TransactionModel({
         <form onSubmit={handleSubmit} className="p-6 space-y-4 text-black">
           <div>
             <label
-              htmlFor="description"
+              htmlFor="title"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
-              Description
+              title
             </label>
             <input
-              id="description"
-              name="description"
-              value={formData.description}
+              id="title"
+              name="title"
+              value={formData.title}
               onChange={handleChange}
               placeholder="What was this transaction for?"
               className={inputClass}
