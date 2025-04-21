@@ -1,12 +1,11 @@
 import "./App.css";
-// import ExpenseTracker from "./components/ExpenseTracker";
-import ExpenseApp from "./components/NoobTracker";
+import ExpenseTracker from "./components/ExpenseTracker";
 
 export default function App() {
   return (
     <section className="bg-black min-h-screen h-fit text-white">
       <div className="container mx-auto p-4 py-7">
-        {/* <header className="py-6">
+        <header className="py-6">
           <div className="flex items-center justify-center md:justify-start gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -25,8 +24,8 @@ export default function App() {
 
             <h1 className="text-2xl font-bold">Expense Tracker</h1>
           </div>
-        </header> */}
-        <ExpenseApp />
+        </header>
+        <ExpenseTracker />
       </div>
     </section>
   );
