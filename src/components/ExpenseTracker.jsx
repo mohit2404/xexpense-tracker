@@ -68,8 +68,7 @@ export default function ExpenseTracker() {
     return sortedExpenses;
   }, [groupedExpenses]);
 
-  const recentExpenses = expenses
-    .filter((expense) => expense.type === "expense")
+  const recentTransactions = expenses
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const addExpense = (expense) => {
@@ -168,7 +167,7 @@ export default function ExpenseTracker() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
         <ExpenseList
-          expenses={recentExpenses}
+          expenses={recentTransactions}
           onDeleteExpense={deleteExpense}
           onEditExpense={openEditModal}
         />
