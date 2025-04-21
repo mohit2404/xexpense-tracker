@@ -1,5 +1,6 @@
 import "./App.css";
 import ExpenseTracker from "./components/ExpenseTracker";
+import ExpenseApp from "./components/NoobTracker";
 
 export default function App() {
   return (
@@ -25,7 +26,7 @@ export default function App() {
             <h1 className="text-2xl font-bold">Expense Tracker</h1>
           </div>
         </header>
-        <ExpenseTracker />
+        <ExpenseApp />
       </div>
     </section>
   );
